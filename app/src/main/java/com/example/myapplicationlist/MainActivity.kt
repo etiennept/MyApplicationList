@@ -15,6 +15,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.*
@@ -26,6 +27,8 @@ import com.example.myapplicationlist.ui.theme.MyApplicationListTheme
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.asImageBitmap
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.sp
 
 import androidx.core.graphics.drawable.toBitmap
 
@@ -97,7 +100,7 @@ fun View() {
             },
             Modifier.fillMaxWidth(),
             label = {
-                Text(text = "search a app")
+                Text(text = stringResource(id = R.string.search_app))
             })
 
         LazyColumn {
@@ -117,7 +120,7 @@ fun View() {
                             text = it.label,
                             modifier = Modifier.align(
                                 Alignment.Center
-                            )
+                            ) , fontSize = 20.sp
                         )
                     }
                     DropdownMenu(
@@ -131,13 +134,13 @@ fun View() {
                             activity.startActivity(it.startIntent)
 
                         }) {
-                            Text("Open")
+                            Text(stringResource(id = R.string.open))
                         }
                         DropdownMenuItem(onClick = {
-                            activity.startActivity(it.googlePlay())
+                            activity.startActivity(it.googlePlay( ))
                         }) {
 
-                            Text("More information")
+                            Text(stringResource(id = R.string.open))
                         }
                     }
                 }

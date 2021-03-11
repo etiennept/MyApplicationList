@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">My Application List</string>
+    <string name="search_app">Recherche une application</string>
+    <string name="open">Ouvre</string>
+    <string name="more_information">Plus information</string>
+</resources>
